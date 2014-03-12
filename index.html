@@ -27,6 +27,8 @@
 				$('h1')[0].innerHTML = '<img width="170" height="25" src="images/ufo_neon_rainbow.png">';
 				$('.es-header-menu-item')[2].click();
 				setTimeout(function() {
+				$('.pull-right')[0].innerHTML += '<img style="cursor: pointer; height: 22px; margin-bottom: -8px; display: inline-block;" onclick="window.open(\'https://github.com/soheil/betterHead\');" src="images/fork.png">';
+				$('.pull-right')[0].style.verticalAlign = 'top';
 					$('.uiIndexSelector-select option').each(function(i, el) {
 						if (/dev.profile/.test(el.innerHTML)) {
 							$('.uiIndexSelector-select select')[0].selectedIndex = i;
