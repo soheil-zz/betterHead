@@ -28,7 +28,7 @@
 				$('.es-header-menu-item')[2].click();
 				setTimeout(function() {
 					$('.uiIndexSelector-select option').each(function(i, el) {
-						if (/dev.profile/.test(el.innerHTML)) {
+						if (/dev.*?profile/.test(el.innerHTML)) {
 							$('.uiIndexSelector-select select')[0].selectedIndex = i;
 							doOnChange($('.uiIndexSelector-select select')[0]);
 						}
