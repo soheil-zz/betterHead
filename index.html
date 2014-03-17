@@ -36,19 +36,25 @@
 							$('.es-field')[0].selectedIndex = 1;
 							doOnChange($('.es-field')[0]);
 							setTimeout(function() {
-								$('.es-qual')[0].focus();
-								$('.es-qual')[0].onkeypress = function(ev) {
-			            ev = window.event || ev;
-			            var key = ev.charCode || ev.keyCode;
-			            key == 13 && $('.uiStructuredQuery-body button:last')[0].click();
-			          }
-								$('.uiFilterBrowser-outputFormat')[0].selectedIndex=1;
-								doOnChange($('.uiFilterBrowser-outputFormat')[0]);
+								addOnEnter();
 							}, 250);
+							setInterval(function() {
+								addOnEnter();
+							}, 1500);
+							$('.uiFilterBrowser-outputFormat')[0].selectedIndex=1;
+							doOnChange($('.uiFilterBrowser-outputFormat')[0]);
 						}, 50);
 					});
 				}, 150);
 			};
+			function addOnEnter() {
+				$('.es-qual')[0].focus();
+				$('.es-qual')[0].onkeypress = function(ev) {
+	        ev = window.event || ev;
+	        var key = ev.charCode || ev.keyCode;
+	        key == 13 && $('.uiStructuredQuery-body button:last')[0].click();
+	      }
+			}
 			function doOnChange(element) {
 				if ('createEvent' in document) {
 			    var evt = document.createEvent('HTMLEvents');
